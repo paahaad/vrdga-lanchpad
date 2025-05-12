@@ -4,9 +4,9 @@ import { WalletButton } from '@/components/solana/solana-provider'
 
 export function AppHeader() {
   return (
-    <header className="relative z-50 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 dark:text-neutral-400">
-      <div className="mx-auto flex justify-between items-center">
-        <Link className="text-xl hover:text-neutral-500 dark:hover:text-white" href="/">
+    <header className="relative z-50 px-4 py-4 bg-black text-white">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link className="text-2xl font-bold hover:text-blue-500 transition-colors" href="/">
           <span>VRGDA</span>
         </Link>
         <WalletButton />
