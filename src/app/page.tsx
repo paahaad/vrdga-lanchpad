@@ -104,7 +104,7 @@ export default function Home() {
       </header>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-        <Link href="/new-token">
+        <Link href="/launch">
           <Button className="bg-blue-500 hover:bg-blue-600 text-white">Create New Token</Button>
         </Link>
         <SearchBar />

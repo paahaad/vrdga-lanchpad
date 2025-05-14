@@ -50,14 +50,14 @@ export function TokenForm() {
         </TabsList>
 
         <TabsContent value="token-details">
-          <Card>
+          <Card className="bg-gray-900 border-gray-800">
             <CardHeader>
-              <CardTitle>Basic Token Information</CardTitle>
-              <CardDescription>Enter the details for your new token</CardDescription>
+              <CardTitle className="text-white">Basic Token Information</CardTitle>
+              <CardDescription className="text-gray-400">Enter the details for your new token</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Token Name</Label>
+                <Label htmlFor="name" className="text-white">Token Name</Label>
                 <Input
                   id="name"
                   name="name"
@@ -65,11 +65,12 @@ export function TokenForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="symbol">Token Symbol</Label>
+                <Label htmlFor="symbol" className="text-white">Token Symbol</Label>
                 <Input
                   id="symbol"
                   name="symbol"
@@ -78,12 +79,13 @@ export function TokenForm() {
                   onChange={handleChange}
                   required
                   maxLength={5}
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
-                <p className="text-xs text-gray-500">Maximum 5 characters</p>
+                <p className="text-xs text-gray-400">Maximum 5 characters</p>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="supply">Total Supply</Label>
+                <Label htmlFor="supply" className="text-white">Total Supply</Label>
                 <Input
                   id="supply"
                   name="supply"
@@ -93,11 +95,12 @@ export function TokenForm() {
                   onChange={handleChange}
                   required
                   min="1"
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description">Token Description</Label>
+                <Label htmlFor="description" className="text-white">Token Description</Label>
                 <Textarea
                   id="description"
                   name="description"
@@ -105,6 +108,7 @@ export function TokenForm() {
                   value={formData.description}
                   onChange={handleChange}
                   rows={4}
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
               </div>
             </CardContent>
@@ -112,15 +116,15 @@ export function TokenForm() {
         </TabsContent>
 
         <TabsContent value="vrgda-params">
-          <Card>
+          <Card className="bg-gray-900 border-gray-800">
             <CardHeader>
-              <CardTitle>VRGDA Configuration</CardTitle>
-              <CardDescription>Configure the Variable Rate Gradual Dutch Auction parameters</CardDescription>
+              <CardTitle className="text-white">VRGDA Configuration</CardTitle>
+              <CardDescription className="text-gray-400">Configure the Variable Rate Gradual Dutch Auction parameters</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="targetPrice">Target Price (ETH)</Label>
+                  <Label htmlFor="targetPrice" className="text-white">Target Price (SOL)</Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -147,7 +151,7 @@ export function TokenForm() {
                     name="targetPrice"
                     value={formData.targetPrice}
                     onChange={handleChange}
-                    className="w-24"
+                    className="w-24 bg-gray-800 border-gray-700 text-white"
                     step="0.001"
                     min="0.001"
                   />
@@ -156,7 +160,7 @@ export function TokenForm() {
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="initialPrice">Initial Price (ETH)</Label>
+                  <Label htmlFor="initialPrice" className="text-white">Initial Price (SOL)</Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -183,7 +187,7 @@ export function TokenForm() {
                     name="initialPrice"
                     value={formData.initialPrice}
                     onChange={handleChange}
-                    className="w-24"
+                    className="w-24 bg-gray-800 border-gray-700 text-white"
                     step="0.001"
                     min="0.001"
                   />
@@ -192,7 +196,7 @@ export function TokenForm() {
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="decayConstant">Decay Constant</Label>
+                  <Label htmlFor="decayConstant" className="text-white">Decay Constant</Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -221,7 +225,7 @@ export function TokenForm() {
                     name="decayConstant"
                     value={formData.decayConstant}
                     onChange={handleChange}
-                    className="w-24"
+                    className="w-24 bg-gray-800 border-gray-700 text-white"
                     step="0.1"
                     min="0.1"
                     max="1"
@@ -231,7 +235,7 @@ export function TokenForm() {
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <Label htmlFor="timeScale">Time Scale (seconds)</Label>
+                  <Label htmlFor="timeScale" className="text-white">Time Scale (seconds)</Label>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -249,44 +253,17 @@ export function TokenForm() {
                   type="number"
                   value={formData.timeScale}
                   onChange={handleChange}
-                  min="3600"
-                  step="3600"
+                  className="bg-gray-800 border-gray-700 text-white"
                 />
-                <div className="flex gap-2 mt-1">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setFormData((prev) => ({ ...prev, timeScale: "86400" }))}
-                  >
-                    1 Day
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setFormData((prev) => ({ ...prev, timeScale: "604800" }))}
-                  >
-                    1 Week
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setFormData((prev) => ({ ...prev, timeScale: "2592000" }))}
-                  >
-                    30 Days
-                  </Button>
-                </div>
               </div>
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
 
-      <div className="mt-8 flex justify-end">
-        <Button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-8">
-          Launch Token
+      <div className="mt-8">
+        <Button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white">
+          Create Token
         </Button>
       </div>
     </form>
