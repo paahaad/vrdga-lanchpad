@@ -25,7 +25,7 @@ import {
 } from "@solana/spl-token";
 
 // IMPORTANT: Import the correct IDL type here.
-import { Vrgda } from "../target/types/vrgda";
+// import { Vrgda } from "../target/types/vrgda";
 // Import the IDL directly to ensure we have the correct version
 
 describe("vrgda", () => {
