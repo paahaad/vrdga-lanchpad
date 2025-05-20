@@ -59,7 +59,7 @@ export function TokenCard({ token }: TokenCardProps) {
       </CardContent>
       <CardFooter className="border-t border-gray-800 bg-gray-900 px-4 py-2">
         <Link href={`/auction/${token.mintAddress}`} className="w-full">
-          <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-1">
+          <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-sm py-1">
             Participate in Auction
           </Button>
         </Link>

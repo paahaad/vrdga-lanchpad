@@ -51,6 +51,20 @@ pub mod vrgda {
         vrgda.authority = *ctx.accounts.authority.key;
         vrgda.mint = ctx.accounts.mint.key();
         vrgda.bump = ctx.bumps.vrgda;
+        // Add mint to vrgda_vault
+        msg!("Minting token to associated token account...");
+        
+        token_interface::mint_to(
+            CpiContext::new(
+                ctx.accounts.token_program.to_account_info(),
+                MintTo {
+                    mint: ctx.accounts.mint.to_account_info(),
+                    to: ctx.accounts.vrgda_vault.to_account_info(),
+                    authority: ctx.accounts.authority.to_account_info(),
+                },
+            ),
+            total_supply,
+        )?;
 
         msg!("VRGDA PDA: {:?}", vrgda.key());
         msg!("VRGDA Mint: {:?}", vrgda.mint);
@@ -204,7 +218,7 @@ pub mod vrgda {
     //         &[ctx.accounts.vrgda.bump],
     //     ];
     //     let signer = &[&vrgda_seeds[..]];
-    //     // Burn the tokens from the seller’s token account.
+    //     // Burn the tokens from the seller's token account.
     //     // This call burns `amount` tokens from seller_ata.
     //     token_interface::burn(
     //         CpiContext::new(
