@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { TokenCard } from "@/components/token-card"
 import { SearchBar } from "@/components/search-bar"
 import Hero from "@/components/hero"
 import { UpcomingLaunches } from "@/components/upcoming-launches"

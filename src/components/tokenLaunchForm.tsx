@@ -4,10 +4,8 @@ import {
   Coins,
   Calendar,
   DollarSign,
-  Users,
   Lock,
   Percent,
-  Clock,
   Shield,
 } from 'lucide-react';
 

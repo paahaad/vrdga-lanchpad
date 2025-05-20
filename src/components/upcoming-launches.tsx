@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Filter, Star, Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link'
+import Image from 'next/image';
 
 // Sample data for upcoming launches
 const launchesData = [
@@ -76,10 +77,11 @@ const ProjectCard = ({ project }: { project: typeof launchesData[0] }) => {
   return (
     <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden transition-all hover:shadow-lg hover:shadow-purple-500/10 hover:border-purple-500/30">
       <div className="h-48 overflow-hidden relative">
-        <img
+        <Image
           src={project.image}
           alt={project.name}
-          className="w-full h-full object-cover transition-transform hover:scale-105"
+          fill
+          className="object-cover transition-transform hover:scale-105"
         />
         <div className="absolute top-3 right-3">
           <span className="bg-purple-500/80 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md">

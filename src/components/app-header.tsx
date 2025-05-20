@@ -18,7 +18,7 @@ import { WalletButton } from '@/components/solana/solana-provider'
 // }
 
 import React, { useState, useEffect } from 'react';
-import { Rocket, Menu, X, Moon, Sun, Wallet } from 'lucide-react';
+import { Rocket, Menu, X } from 'lucide-react';
 
 const AppHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,12 +50,12 @@ const AppHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <Rocket className="h-8 w-8 text-purple-500" />
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
               Toknix
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
