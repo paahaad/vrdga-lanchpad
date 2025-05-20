@@ -3,12 +3,13 @@ import { Button } from "@/components/ui/button"
 import { TokenCard } from "@/components/token-card"
 import { SearchBar } from "@/components/search-bar"
 
-// Mock data for available tokens
+// TODO: Fetch the data from the database, Mock data for available tokens 
 const tokens = [
   {
     id: "1",
     name: "Decentralized Finance Token",
     symbol: "DFT",
+    mintAddress: "DFT1234567890abcdef1234567890abcdef12345678",
     supply: "1,000,000",
     targetPrice: "0.5 SOL",
     initialPrice: "1 SOL",
@@ -20,6 +21,7 @@ const tokens = [
     id: "2",
     name: "Governance Protocol",
     symbol: "GOV",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "500,000",
     targetPrice: "0.2 SOL",
     initialPrice: "0.4 SOL",
@@ -31,6 +33,7 @@ const tokens = [
     id: "3",
     name: "Metaverse Token",
     symbol: "META",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "2,000,000",
     targetPrice: "0.1 SOL",
     initialPrice: "0.25 SOL",
@@ -42,6 +45,7 @@ const tokens = [
     id: "4",
     name: "AI Research Network",
     symbol: "AIR",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "750,000",
     targetPrice: "0.8 SOL",
     initialPrice: "1.5 SOL",
@@ -53,6 +57,7 @@ const tokens = [
     id: "5",
     name: "Gaming Rewards",
     symbol: "PLAY",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "5,000,000",
     targetPrice: "0.05 SOL",
     initialPrice: "0.1 SOL",
@@ -64,6 +69,7 @@ const tokens = [
     id: "6",
     name: "DeFi Insurance",
     symbol: "SAFE",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "300,000",
     targetPrice: "1.5 SOL",
     initialPrice: "2.5 SOL",
@@ -75,6 +81,7 @@ const tokens = [
     id: "7",
     name: "NFT Marketplace",
     symbol: "NFTX",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "1,500,000",
     targetPrice: "0.3 SOL",
     initialPrice: "0.6 SOL",
@@ -86,6 +93,7 @@ const tokens = [
     id: "8",
     name: "Cross-Chain Bridge",
     symbol: "BRIDGE",
+    mintAddress: "GOV1234567890abcdef1234567890abcdef12345678",
     supply: "400,000",
     targetPrice: "1.2 SOL",
     initialPrice: "2 SOL",

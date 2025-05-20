@@ -1,12 +1,14 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Clock } from "lucide-react"
+import Link from "next/link"
 
 interface TokenCardProps {
   token: {
     id: string
     name: string
     symbol: string
+    mintAddress: string
     supply: string
     targetPrice: string
     initialPrice: string
@@ -31,6 +33,12 @@ export function TokenCard({ token }: TokenCardProps) {
       <CardContent className="pt-2">
         <div className="space-y-2">
           <div className="flex justify-between text-xs">
+            <span className="text-gray-400">Mint Address:</span>
+            <span className="font-mono text-xs text-white truncate max-w-[180px]" title={token.mintAddress}>
+              {token.mintAddress}
+            </span>
+          </div>
+          <div className="flex justify-between text-xs">
             <span className="text-gray-400">Total Supply:</span>
             <span className="font-medium text-white">{token.supply}</span>
           </div>
@@ -50,7 +58,11 @@ export function TokenCard({ token }: TokenCardProps) {
         </div>
       </CardContent>
       <CardFooter className="border-t border-gray-800 bg-gray-900 px-4 py-2">
-        <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-1">Participate in Auction</Button>
+        <Link href={`/auction/${token.mintAddress}`} className="w-full">
+          <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm py-1">
+            Participate in Auction
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   )
