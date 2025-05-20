@@ -80,7 +80,7 @@ const TokenLaunchForm = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 md:p-8 space-y-8"
+          className="backdrop-blur-sm border border-gray-700 rounded-2xl p-6 md:p-8 space-y-8"
         >
           {/* Token Basic Information */}
           <div className="space-y-6">
