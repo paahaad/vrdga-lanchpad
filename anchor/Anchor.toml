@@ -1,9 +1,13 @@
 [toolchain]
 package_manager = "yarn"
+anchor_version = "0.29.0"
+solana_version = "1.18.26"
+
 
 [features]
 resolution = true
 skip-lint = false
+idl-build = ["anchor-lang/idl-build"]
 
 [programs.localnet]
 vrgda = "2vUvbNpNc1PrALu9qCEkU1KmaoKu7tz9yMWSopgnf9ZB"
