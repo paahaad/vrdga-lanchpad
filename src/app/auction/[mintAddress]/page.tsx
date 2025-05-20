@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
+import { use } from "react"
 
 // Mock function to get token details - replace with actual data fetching
 const getTokenDetails = (mintAddress: string) => {
@@ -21,9 +22,15 @@ const getTokenDetails = (mintAddress: string) => {
   }
 }
 
-export default function AuctionPage({ params }: { params: { mintAddress: string } }) {
+interface PageProps {
+  params: Promise<{ mintAddress: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}
+
+export default function AuctionPage({ params }: PageProps) {
   const [amount, setAmount] = useState("")
-  const token = getTokenDetails(params.mintAddress)
+  const resolvedParams = use(params)
+  const token = getTokenDetails(resolvedParams.mintAddress)
 
   const handleBuy = () => {
     // Implement buy logic here

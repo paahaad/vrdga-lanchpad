@@ -9,15 +9,13 @@ import { AppFooter } from '@/components/app-footer'
 
 export function AppLayout({
   children,
-  links,
 }: {
   children: React.ReactNode
-  links: { label: string; path: string }[]
 }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <div className="flex flex-col min-h-screen">
-        <AppHeader links={links} />
+        <AppHeader />
         <main className="flex-grow container mx-auto p-4">
           {children}
         </main>
